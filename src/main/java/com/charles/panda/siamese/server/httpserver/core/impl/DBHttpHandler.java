@@ -2,8 +2,6 @@ package com.charles.panda.siamese.server.httpserver.core.impl;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -13,7 +11,6 @@ import com.charles.panda.siamese.server.httpserver.core.Response;
 import com.google.gson.Gson;
 import com.importsource.dbcp.common.CommonException;
 import com.importsource.dbcp.core.DbcpConnection;
-import com.importsource.dbcp.core.Write;
 
 /**
  * 含有db的handler
@@ -65,7 +62,11 @@ public abstract class DBHttpHandler extends HttpHandler {
 		write(request,response);
 		
 	}
-
+    /**
+     * 如果你想要返回更多的信息。你可以重写这个方法来做更多的操作。
+     * @param request
+     * @param response
+     */
 	protected void write(Request request, Response response) {
 		Gson gson=new Gson();
 		if(null!=obj){
