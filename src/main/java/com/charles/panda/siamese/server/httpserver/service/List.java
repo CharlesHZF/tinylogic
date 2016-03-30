@@ -17,10 +17,10 @@ import com.importsource.dbcp.client.DBClient;
  * @author Hezf
  *
  */
-public class FirstHandler extends DBHttpHandler{
+public class List extends DBHttpHandler{
 	@Override
 	public void doIt(Connection conn, Request request, Response response) {
-		obj =  DBClient.del(conn, "delete from user where name=?", "贺卓凡");
+		obj =  DBClient.list(conn, "select * from user where 1=?","1");
 	}
 	
 }

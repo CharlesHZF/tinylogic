@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <httpServer context="/myApp">
 	<handler>
-		<handler-class>com.charles.panda.siamese.server.httpserver.service.FirstHandler</handler-class>
-		<url-pattern>/firstHandler</url-pattern>
+		<handler-class>com.charles.panda.siamese.server.httpserver.service.List</handler-class>
+		<url-pattern>/list</url-pattern>
+	</handler>
+	<handler>
+		<handler-class>com.charles.panda.siamese.server.httpserver.service.Del</handler-class>
+		<url-pattern>/del</url-pattern>
 	</handler>
 </httpServer>
