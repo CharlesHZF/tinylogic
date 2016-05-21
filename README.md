@@ -31,3 +31,6 @@ dependency:copy-dependencies -DoutputDirectory=target/lib
 		</build>
 ```
 
+```cmd
+java -jar C:/Users/Hezf/Documents/dev/svn/alogic/workspace/tinylogic/target/tinylogic-0.0.1-SNAPSHOT.jar
+```
