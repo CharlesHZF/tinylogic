@@ -8,4 +8,8 @@
 		<handler-class>com.charles.panda.siamese.server.httpserver.service.Del</handler-class>
 		<url-pattern>/del</url-pattern>
 	</handler>
+	<handler>
+		<handler-class>com.charles.panda.siamese.server.httpserver.service.Hello</handler-class>
+		<url-pattern>/hello</url-pattern>
+	</handler>
 </httpServer>

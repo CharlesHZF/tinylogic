@@ -1,5 +1,6 @@
 package com.charles.panda.siamese.server.httpserver;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,8 @@ public class Context {
 	public static String contextPath = "";
 	public static void load(){
 		try{
-			Document doc = XmlUtils.load(Context.class.getResource("/").getPath()+"context.xml");
+			//Document doc = XmlUtils.load(Context.class.getResource("/").getPath()+"context.xml");
+			Document doc=XmlUtils.load(new File("C:/Users/Hezf/Documents/dev/svn/alogic/workspace/tinylogic/src/main/resources/context.xml"));
 			Element root = doc.getDocumentElement();
 			
 			contextPath = XmlUtils.getAttribute(root,"context");
@@ -35,7 +37,7 @@ public class Context {
 				}
 			}
 		}catch(Exception e){
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 	}
 	

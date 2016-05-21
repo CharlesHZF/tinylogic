@@ -7,6 +7,26 @@
 	<name>tinylogic</name>
 	<description>tinylogic</description>
 
+	 <build>
+   	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<configuration>
+				<archive>
+					<manifest>
+						<mainClass>com.charles.panda.siamese.server.httpserver.MyHttpServer</mainClass>
+						<addClasspath>true</addClasspath>
+						<classpathPrefix>../lib</classpathPrefix>
+					</manifest>
+				</archive>
+				<classesDirectory>
+				</classesDirectory>
+			</configuration>
+		</plugin>
+		</plugins>
+		</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.importsource.dbcp</groupId>
@@ -19,4 +39,6 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+
+
 </project>

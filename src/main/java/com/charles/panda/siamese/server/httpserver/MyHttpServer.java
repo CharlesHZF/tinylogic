@@ -2,6 +2,7 @@ package com.charles.panda.siamese.server.httpserver;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.URL;
 
 import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.spi.HttpServerProvider;
@@ -18,8 +19,13 @@ import com.sun.net.httpserver.spi.HttpServerProvider;
 @SuppressWarnings("restriction")
 public class MyHttpServer {
 	public static void main(String[] args) throws IOException {
-		
+		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();  
+		for (int i = 0; i < urls.length; i++) {  
+		    System.out.println(urls[i].toExternalForm());  
+		}
+		System.out.println("进入");
 		Context.load();
+		System.out.println("load 后");
 		HttpServerProvider provider = HttpServerProvider.provider();
 		HttpServer httpserver = provider.createHttpServer(new InetSocketAddress(8080), 100);// 监听端口8080,能同时接
 		// 受100个请求
