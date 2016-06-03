@@ -38,11 +38,6 @@
 			<artifactId>importsource-ison</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>com.importsource.tinylogic.demo</groupId>
-			<artifactId>tinylogic-demo</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 
