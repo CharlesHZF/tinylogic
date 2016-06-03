@@ -68,4 +68,17 @@
 	
 	
 	<!-- log conf end -->
+	
+	
+	<!-- tinylogic conf start -->
+	<property>
+		<name>tinylogic.server.count</name>
+		<value>100</value>
+	</property>
+	<property>
+		<name>tinylogic.server.port</name>
+		<value>9000</value>
+	</property>
+	<!-- tinylogic conf end -->
+	
 </configuration>

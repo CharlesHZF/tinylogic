@@ -7,10 +7,13 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
 
+import com.importsource.log.core.Logger;
 import com.importsource.tinylogic.conf.DefaultProperties;
 import com.importsource.tinylogic.conf.PropertiesTools;
+import com.importsource.tinylogic.log.LogManager;
 
 public class DefaultDbConnection  {
+	protected static Logger logger=LogManager.getLogger(DefaultDbConnection.class);
 	private static DataSource dataSource;
 	private static Connection con;
 
@@ -19,7 +22,6 @@ public class DefaultDbConnection  {
 
 	public static Connection getConnection() {
 		if (dataSource == null) {
-			System.out.println("connection");
 			initDataSource();
 		}
 		try {
@@ -27,8 +29,7 @@ public class DefaultDbConnection  {
 			print();
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		return con;
 
@@ -47,7 +48,6 @@ public class DefaultDbConnection  {
 		try {
 			DefaultProperties p = DefaultProperties.newInstance();
 			driverClassName = PropertiesTools.get(p, "dbcp.driverClassName", null);
-			System.out.println("driverClassName"+driverClassName);
 			url = PropertiesTools.get(p, "dbcp.url", null);
 			username = PropertiesTools.get(p, "dbcp.username", null);
 			password = PropertiesTools.get(p, "dbcp.password", null);
@@ -79,10 +79,10 @@ public class DefaultDbConnection  {
 	/* 用于测试连接状态的方法 */
 	public static void print() {
 		BasicDataSource ds = (BasicDataSource) dataSource;
-		System.out.println(ds.getInitialSize());
-		System.out.println(ds.getNumActive());
-		System.out.println(ds.getNumIdle());
-		System.out.println(ds.getDefaultAutoCommit());
+		logger.i(ds.getInitialSize()+"");
+		logger.i(ds.getNumActive()+"");
+		logger.i(ds.getNumIdle()+"");
+		logger.i(ds.getDefaultAutoCommit()+"");
 	}
 
 //	public static void main(String[] args) {

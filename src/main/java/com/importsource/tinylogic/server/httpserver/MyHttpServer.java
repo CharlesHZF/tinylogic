@@ -5,6 +5,8 @@ import java.net.InetSocketAddress;
 import java.net.URL;
 
 import com.importsource.log.core.Logger;
+import com.importsource.tinylogic.conf.DefaultProperties;
+import com.importsource.tinylogic.conf.PropertiesTools;
 import com.importsource.tinylogic.log.LogManager;
 import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.spi.HttpServerProvider;
@@ -20,20 +22,31 @@ import com.sun.net.httpserver.spi.HttpServerProvider;
  */
 @SuppressWarnings("restriction")
 public class MyHttpServer {
-	protected static Logger logger=LogManager.getLogger(Context.class);
+	protected static Logger logger=LogManager.getLogger(MyHttpServer.class);
 	public static void main(String[] args) throws IOException {
-		int port=8080;
+		int port=getPort();
 		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();  
 		for (int i = 0; i < urls.length; i++) {  
 		    logger.i("load "+urls[i].toExternalForm());  
 		}
 		Context.load();
 		HttpServerProvider provider = HttpServerProvider.provider();
-		HttpServer httpserver = provider.createHttpServer(new InetSocketAddress(port), 100);// 监听端口8080,能同时接
+		HttpServer httpserver = provider.createHttpServer(new InetSocketAddress(port), getCount());// 监听端口8080,能同时接
 		// 受100个请求
 		httpserver.createContext(Context.contextPath, new MyHttpHandler());
 		httpserver.setExecutor(null);
 		httpserver.start();
 		logger.i("ok!server started! at port:"+port);
+	}
+	
+	private static int getCount() {
+		DefaultProperties p=new DefaultProperties();
+		int count=Integer.parseInt(PropertiesTools.get(p, "tinylogic.server.count", "100"));
+		return count;
+	}
+	private static int getPort() {
+		DefaultProperties p=new DefaultProperties();
+		int port=Integer.parseInt(PropertiesTools.get(p, "tinylogic.server.port", "8080"));
+		return port;
 	}
 }

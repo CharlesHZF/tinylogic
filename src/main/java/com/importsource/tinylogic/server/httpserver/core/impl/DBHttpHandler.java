@@ -3,13 +3,11 @@ package com.importsource.tinylogic.server.httpserver.core.impl;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
 import com.importsource.dbcp.common.CommonException;
-import com.importsource.dbcp.core.DbcpConnection;
 import com.importsource.ison.Ison;
+import com.importsource.log.core.Logger;
 import com.importsource.tinylogic.db.DefaultDbConnection;
+import com.importsource.tinylogic.log.LogManager;
 import com.importsource.tinylogic.server.httpserver.core.Request;
 import com.importsource.tinylogic.server.httpserver.core.Response;
 
@@ -34,10 +32,9 @@ public abstract class DBHttpHandler extends HttpHandler {
 	}
 
 	protected void dbStatement(Request request, Response response) {
-		System.out.println("dbStatement");
 		Connection conn = DefaultDbConnection.getConnection();
 		if (conn == null) {
-			logger.error("The database connection is null!");
+			logger.e("The database connection is null!");
 		}
 		boolean autoCommit = true;
 		try {
@@ -50,9 +47,9 @@ public abstract class DBHttpHandler extends HttpHandler {
 			try {
 				conn.rollback();
 			} catch (SQLException e) {
-				logger.error(e.getMessage(), e);
+				logger.e(e.getMessage());
 			}
-			logger.error(ex.getMessage(), ex);
+			logger.e(ex.getMessage());
 		} finally {
 			try {
 				conn.close();

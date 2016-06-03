@@ -31,11 +31,11 @@ public class JarSource{
 	private static String getTinyLogicProjectPath() {
 		final	String  jarPath=MyPath.getProjectPath();
 		String appJar="";
-		System.out.println(jarPath);
+		//System.out.println(jarPath);
 		if(StringUtils.isNotEmpty(jarPath)){
 			String[] pathItems=jarPath.split("\\\\");
 			String lastItem=pathItems[pathItems.length-1];
-			System.out.println(lastItem);
+			//System.out.println(lastItem);
 			appJar=jarPath.substring(0,jarPath.length()-lastItem.length());
 			
 		}
