@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.panda.tinylogic</groupId>
+	<groupId>com.importsource.tinylogic</groupId>
 	<artifactId>tinylogic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tinylogic</name>
@@ -15,7 +15,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.charles.panda.siamese.server.httpserver.MyHttpServer</mainClass>
+							<mainClass>com.importsource.tinylogic.server.httpserver.MyHttpServer</mainClass>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>../lib</classpathPrefix>
 						</manifest>
@@ -36,6 +36,11 @@
 		<dependency>
 			<groupId>com.importsource.ison</groupId>
 			<artifactId>importsource-ison</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.importsource.log4jc</groupId>
+			<artifactId>importsource-log4jc</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
