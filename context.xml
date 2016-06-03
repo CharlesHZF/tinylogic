@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<httpServer context="/myApp">
+	<handler>
+		<handler-class>com.charles.panda.siamese.server.httpserver.service.List</handler-class>
+		<url-pattern>/list</url-pattern>
+	</handler>
+	<handler>
+		<handler-class>com.charles.panda.siamese.server.httpserver.service.Del</handler-class>
+		<url-pattern>/del</url-pattern>
+	</handler>
+	<handler>
+		<handler-class>com.charles.panda.siamese.server.httpserver.service.Hello</handler-class>
+		<url-pattern>/hello</url-pattern>
+	</handler>
+	<handler>
+		<handler-class>com.tinylogic.demo.service.Hello1</handler-class>
+		<url-pattern>/hello1</url-pattern>
+	</handler>
+</httpServer>

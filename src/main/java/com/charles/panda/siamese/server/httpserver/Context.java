@@ -9,6 +9,9 @@ import org.w3c.dom.Element;
 
 import com.charles.panda.siamese.server.httpserver.core.impl.HttpHandler;
 import com.charles.panda.siamese.server.httpserver.utils.XmlUtils;
+import com.charles.panda.siamese.server.httpserver.utils.jar.MyPath;
+
+import default1.Load;
 /**
  * 
  * @author charles
@@ -20,8 +23,8 @@ public class Context {
 	public static String contextPath = "";
 	public static void load(){
 		try{
-			//Document doc = XmlUtils.load(Context.class.getResource("/").getPath()+"context.xml");
-			Document doc=XmlUtils.load(new File("C:/Users/Hezf/Documents/dev/svn/alogic/workspace/tinylogic/src/main/resources/context.xml"));
+			//Document doc = XmlUtils.load(Load.class.getResource("/").getPath()+"context.xml");
+			Document doc=XmlUtils.load(new File(MyPath.getProjectPath()+"/context.xml"));
 			Element root = doc.getDocumentElement();
 			
 			contextPath = XmlUtils.getAttribute(root,"context");
