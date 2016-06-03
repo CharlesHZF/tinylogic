@@ -1,7 +1,9 @@
 package com.importsource.tinylogic.server.httpserver;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.w3c.dom.Document;
@@ -56,9 +58,30 @@ public class Context {
 
 	private static String getAppJar() {
 		String appJar = getTinyLogicProjectPath();
-		appJar=appJar+"webapp"+File.separator+"tinylogic-demo-0.0.1-SNAPSHOT.jar";
+		String webappPath = appJar+"webapp"+File.separator;
+		appJar=webappPath+getFileName(webappPath).get(0);
 		return appJar;
 	}
+	
+	
+	 public static List<String> getFileName(String dir) {
+	        File f = new File(dir);
+	        List<String> lst=new ArrayList<String>();
+	        if (!f.exists()) {
+	            System.out.println(dir + " not exists");
+	            return null;
+	        }
+
+	        File fa[] = f.listFiles();
+	        for (int i = 0; i < fa.length; i++) {
+	            File fs = fa[i];
+	            if (!fs.isDirectory()) {
+	                lst.add(fs.getName());
+	            } 
+	            
+	        }
+	        return lst;
+	    }
 
 	private static String getTinyLogicProjectPath() {
 		final	String  jarPath=MyPath.getProjectPath();
