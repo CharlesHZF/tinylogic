@@ -20,7 +20,12 @@ public class MyHttpHandler implements HttpHandler {
 		HttpRequest request = new HttpRequest(httpExchange);
 		HttpResponse response = new HttpResponse(httpExchange);
 		Handler handler = Context.getHandler(request.getReuestURI().getPath());
-		handler.service(request, response);
+		if(handler==null){
+			response.write("Can't find this microservice : "+request.getReuestURI().getPath());
+		}else{
+			handler.service(request, response);
+		}
+		
 
 	}
 }

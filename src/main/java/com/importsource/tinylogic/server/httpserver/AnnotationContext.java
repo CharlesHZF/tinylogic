@@ -1,19 +1,20 @@
 package com.importsource.tinylogic.server.httpserver;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.Enumeration;
-import java.util.Map;
-import java.util.StringTokenizer;
 import java.util.jar.JarFile;
 
-import org.w3c.dom.Element;
 
 import com.importsource.tinylogic.server.httpserver.annoation.MicroService;
 import com.importsource.tinylogic.server.httpserver.core.impl.HttpHandler;
 import com.importsource.tinylogic.server.httpserver.utils.jar.AppClassLoader;
 
+/**
+ * 基于annotation的Context
+ * @author Hezf
+ *
+ */
 public class AnnotationContext extends Context implements ILoad {
 	public  void load(){
 		try {
@@ -29,38 +30,6 @@ public class AnnotationContext extends Context implements ILoad {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//扫描jar包
-		/*try{
-			
-			
-			//contextPath = XmlUtils.getAttribute(root,"context");
-			JarFile jar = new JarFile(getAppJar()); 
-		    
-			Enumeration enumeration = jar.entries(); 
-			while(enumeration.hasMoreElements()){ 
-			System.out.println(enumeration.nextElement()); 
-			} 
-			Element[] handlers = XmlUtils.getChildrenByName(root, "handler");
-			for(Element ele : handlers){
-				String handle_class = XmlUtils.getChildText(ele, "handler-class");
-				String url_pattern = XmlUtils.getChildText(ele, "url-pattern");
-				
-				Class<?> cls;
-				try {
-					cls = Class.forName(handle_class);
-				} catch (ClassNotFoundException e) {
-					AppClassLoader cl=AppClassLoader.getInstance(getAppJar());
-					cls=cl.loadClass(handle_class);
-				}
-				Object newInstance = cls.newInstance();
-				if(newInstance instanceof HttpHandler){
-				    logger.i("load "+ cls.getName());
-					contextMap.put(contextPath+url_pattern, (HttpHandler)newInstance);
-				}
-			}
-		}catch(Exception e){
-			throw new RuntimeException(e);
-		}*/
 	}
 	
 	public static void main(String[] args) throws Exception{
