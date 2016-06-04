@@ -24,6 +24,14 @@ import com.sun.net.httpserver.spi.HttpServerProvider;
 public class MyHttpServer {
 	protected static Logger logger=LogManager.getLogger(MyHttpServer.class);
 	public static void main(String[] args) throws IOException {
+		start();
+	}
+
+	/**
+	 * 启动一个server
+	 * @throws IOException
+	 */
+	public static void start() throws IOException {
 		int port=getPort();
 		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();  
 		for (int i = 0; i < urls.length; i++) {  
