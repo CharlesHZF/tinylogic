@@ -10,10 +10,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.importsource.log.core.Logger;
+import com.importsource.tinylogic.log.LogManager;
+import com.importsource.tinylogic.net.httpserver.HttpExchange;
+import com.importsource.tinylogic.server.httpserver.MyHttpServer;
 import com.importsource.tinylogic.server.httpserver.core.Request;
-import com.sun.net.httpserver.HttpExchange;
 
+/**
+ * 具体的httprequest实现
+ * @author Hezf
+ *
+ */
+@SuppressWarnings("restriction")
 public class HttpRequest implements Request {
+	protected static Logger logger=LogManager.getLogger(MyHttpServer.class);
 	private HttpExchange httpExchange;
 	private Map<String, String> paramMap = new HashMap<String, String>();
 	private Map<String, List<String>> headMap = new HashMap<String, List<String>>();
@@ -42,10 +52,14 @@ public class HttpRequest implements Request {
 
 	public void initRequestParam() {
 		String query = getReuestURI().getQuery();
-		String [] arrayStr = query.split("&");
-		for(String str : arrayStr){
-			paramMap.put(str.split("=")[0], str.split("=")[1]);
+		logger.i("query:"+query);
+		if(query!=null){
+			String [] arrayStr = query.split("&");
+			for(String str : arrayStr){
+				paramMap.put(str.split("=")[0], str.split("=")[1]);
+			}
 		}
+		
 		
 	}
 

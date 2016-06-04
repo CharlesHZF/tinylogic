@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 
+import com.importsource.tinylogic.net.httpserver.HttpExchange;
 import com.importsource.tinylogic.server.httpserver.core.Response;
-import com.sun.net.httpserver.HttpExchange;
 
 public class HttpResponse implements Response{
 	private HttpExchange httpExchange;

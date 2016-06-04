@@ -4,8 +4,8 @@ public class PingDemo {
 
 	public static void main(String[] args) {
 		
-		for(int i=0;i<2000000;i++){
-			String s = HttpRequest.sendGet("http://localhost:8080/myApp/list1", "bbb=sdfsdf");
+		for(int i=0;i<1;i++){
+			String s = HttpRequest.sendGet("http://localhost:9000/apps?sdf=sdfs", "sdf");
 			System.out.println(s);
 		}
 		// TODO 

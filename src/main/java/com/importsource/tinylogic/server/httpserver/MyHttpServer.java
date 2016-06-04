@@ -8,8 +8,8 @@ import com.importsource.log.core.Logger;
 import com.importsource.tinylogic.conf.DefaultProperties;
 import com.importsource.tinylogic.conf.PropertiesTools;
 import com.importsource.tinylogic.log.LogManager;
-import com.sun.net.httpserver.HttpServer;
-import com.sun.net.httpserver.spi.HttpServerProvider;
+import com.importsource.tinylogic.net.httpserver.HttpServer;
+import com.importsource.tinylogic.net.httpserver.spi.HttpServerProvider;
 
 
 /**
@@ -59,7 +59,7 @@ public class MyHttpServer {
 		HttpServer httpserver = provider.createHttpServer(new InetSocketAddress(port), getCount());// 监听端口8080,能同时接
 		// 受100个请求
 		logger.i("contextPath is "+Context.contextPath);
-		httpserver.createContext(Context.contextPath, new MyHttpHandler());
+		httpserver.createContext(Context.contextPath, new TinyHttpHandler());
 		httpserver.setExecutor(null);
 		httpserver.start();
 		logger.i("ok!server started! at port:"+port);
