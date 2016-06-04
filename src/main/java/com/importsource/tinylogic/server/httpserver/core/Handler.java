@@ -1,8 +1,7 @@
 package com.importsource.tinylogic.server.httpserver.core;
 /**
- * @author charles
- * @Description: 消息处理接口
- * @version V1.0
+ *  消息处理接口
+ * @author hezf
  */
 public interface Handler {
 	public void service(Request request, Response response);
