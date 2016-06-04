@@ -79,6 +79,11 @@
 		<name>tinylogic.server.port</name>
 		<value>9000</value>
 	</property>
+	<property>
+		<name>tinylogic.server.context</name>
+		<value>com.importsource.tinylogic.server.httpserver.AnnotationContext</value>
+	</property>
+	
 	<!-- tinylogic conf end -->
 	
 </configuration>

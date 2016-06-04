@@ -29,16 +29,39 @@ public class MyHttpServer {
 		for (int i = 0; i < urls.length; i++) {  
 		    logger.i("load "+urls[i].toExternalForm());  
 		}
-		Context.load();
+		Class<?> loadClz=null;
+		try {
+			loadClz = Class.forName(getContext());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ILoad iLoad=null;
+		try {
+			iLoad = (ILoad)loadClz.newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		iLoad.load();
 		HttpServerProvider provider = HttpServerProvider.provider();
 		HttpServer httpserver = provider.createHttpServer(new InetSocketAddress(port), getCount());// 监听端口8080,能同时接
 		// 受100个请求
+		logger.i("contextPath is "+Context.contextPath);
 		httpserver.createContext(Context.contextPath, new MyHttpHandler());
 		httpserver.setExecutor(null);
 		httpserver.start();
 		logger.i("ok!server started! at port:"+port);
 	}
 	
+	private static String getContext() {
+		DefaultProperties p=new DefaultProperties();
+		return PropertiesTools.get(p, "tinylogic.server.context", "com.importsource.tinylogic.server.httpserver.XmlContext");
+	}
+
 	private static int getCount() {
 		DefaultProperties p=new DefaultProperties();
 		int count=Integer.parseInt(PropertiesTools.get(p, "tinylogic.server.count", "100"));
