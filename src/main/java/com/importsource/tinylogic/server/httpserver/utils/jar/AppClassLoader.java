@@ -24,9 +24,7 @@ public class AppClassLoader extends ClassLoader {
 	private String jarName;
 
 	/**
-	 * 构造函数
-	 * 
-	 * @param jarName
+	 * @param jarName 
 	 * @throws Exception
 	 */
 	private AppClassLoader(String jarName) throws Exception {
@@ -35,9 +33,8 @@ public class AppClassLoader extends ClassLoader {
 	}
 
 	/**
-	 * 生成或取得CustomClassLoader实例
-	 * 
-	 * @return
+	 * 生成或取得AppClassLoader实例
+	 * @return AppClassLoader
 	 */
 	public static synchronized AppClassLoader getInstance(String jarName) {
 		if (loader == null)
