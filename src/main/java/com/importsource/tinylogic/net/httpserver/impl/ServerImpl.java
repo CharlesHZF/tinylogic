@@ -116,7 +116,7 @@ class ServerImpl implements TimeSource {
 
         this.protocol = protocol;
         this.wrapper = wrapper;
-        this.logger = Logger.getLogger ("com.sun.net.httpserver");
+        this.logger = Logger.getLogger ("com.importsource.tinylogic.net.httpserver");
         ServerConfig.checkLegacyProperties (logger);
         https = protocol.equalsIgnoreCase ("https");
         this.address = addr;
