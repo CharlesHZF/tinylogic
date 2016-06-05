@@ -24,6 +24,7 @@ import com.importsource.tinylogic.net.httpserver.spi.HttpServerProvider;
 public class TinyHttpServer {
 	protected static Logger logger=LogManager.getLogger(TinyHttpServer.class);
 	public static void main(String[] args) throws IOException {
+		ExtClasspathLoader.loadClasspath();
 		start();
 	}
 
