@@ -14,7 +14,7 @@ import com.importsource.tinylogic.server.httpserver.core.impl.DefaultHttpHandler
 public class Hello extends DefaultHttpHandler{
 	@Override
 	public void doIt(Request request, Response response) {
-		obj =  "HelloWorld"; 
+		obj =  "HelloWorld";  
 	}
 	
 }
