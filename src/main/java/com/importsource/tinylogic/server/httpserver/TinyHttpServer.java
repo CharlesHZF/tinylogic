@@ -21,8 +21,8 @@ import com.importsource.tinylogic.net.httpserver.spi.HttpServerProvider;
  * @version V1.0
  */
 @SuppressWarnings("restriction")
-public class MyHttpServer {
-	protected static Logger logger=LogManager.getLogger(MyHttpServer.class);
+public class TinyHttpServer {
+	protected static Logger logger=LogManager.getLogger(TinyHttpServer.class);
 	public static void main(String[] args) throws IOException {
 		start();
 	}

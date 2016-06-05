@@ -13,7 +13,6 @@ import java.util.Map;
 import com.importsource.log.core.Logger;
 import com.importsource.tinylogic.log.LogManager;
 import com.importsource.tinylogic.net.httpserver.HttpExchange;
-import com.importsource.tinylogic.server.httpserver.MyHttpServer;
 import com.importsource.tinylogic.server.httpserver.core.Request;
 
 /**
@@ -23,7 +22,7 @@ import com.importsource.tinylogic.server.httpserver.core.Request;
  */
 @SuppressWarnings("restriction")
 public class HttpRequest implements Request {
-	protected static Logger logger=LogManager.getLogger(MyHttpServer.class);
+	protected static Logger logger=LogManager.getLogger(HttpRequest.class);
 	private HttpExchange httpExchange;
 	private Map<String, String> paramMap = new HashMap<String, String>();
 	private Map<String, List<String>> headMap = new HashMap<String, List<String>>();

@@ -15,7 +15,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.importsource.tinylogic.server.httpserver.MyHttpServer</mainClass>
+							<mainClass>com.importsource.tinylogic.server.httpserver.TinyHttpServer</mainClass>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>../lib</classpathPrefix>
 						</manifest>
