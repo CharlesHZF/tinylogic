@@ -58,7 +58,7 @@ public class Context {
 		return lst;
 	}
 
-	protected static String getTinyLogicProjectPath() {
+	public static String getTinyLogicProjectPath() {
 		final String jarPath = MyPath.getProjectPath();
 		String appJar = "";
 		// System.out.println(jarPath);
