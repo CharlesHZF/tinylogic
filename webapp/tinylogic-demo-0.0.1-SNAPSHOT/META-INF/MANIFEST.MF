@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Built-By: Hezf
+Build-Jdk: 1.7.0_79
+Class-Path: /lib/tinylogic-0.0.1-SNAPSHOT.jar /lib/importsource-dbcp-0
+ .0.1-SNAPSHOT.jar /lib/mariadb-java-client-1.1.7.jar /lib/jna-3.3.0.j
+ ar /lib/jna-3.3.0-platform.jar /lib/importsource-conf-0.0.1-SNAPSHOT.
+ jar /lib/dom4j-1.6.jar /lib/xml-apis-1.0.b2.jar /lib/junit-4.11.jar /
+ lib/hamcrest-core-1.3.jar /lib/commons-dbcp-1.2.2.jar /lib/commons-po
+ ol-1.3.jar /lib/log4j-1.2.17.jar /lib/importsource-ison-0.0.1-SNAPSHO
+ T.jar /lib/importsource-log4jc-0.0.1-SNAPSHOT.jar /lib/test-classload
+ er-0.0.1-SNAPSHOT.jar
+Created-By: Apache Maven 3.3.3
+Main-Class: com.importsource.tinylogic.server.httpserver.TinyHttpServe
+ r
+Archiver-Version: Plexus Archiver
+

@@ -1,16 +1,15 @@
 package com.importsource.tinylogic.server.httpserver;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.importsource.log.core.Logger;
 import com.importsource.tinylogic.log.LogManager;
 import com.importsource.tinylogic.server.httpserver.core.impl.HttpHandler;
 import com.importsource.tinylogic.server.httpserver.utils.StringUtils;
-import com.importsource.tinylogic.server.httpserver.utils.jar.MyPath;
+import com.importsource.tinylogic.server.httpserver.utils.io.FileUtils;
+import com.importsource.tinylogic.server.httpserver.utils.jar.JarUtils;
 
 /**
  * 上下文
@@ -33,33 +32,36 @@ public class Context {
 	}
 
 	protected static String getAppJar() {
-		String appJar = getTinyLogicProjectPath();
-		String webappPath = appJar + "webapp" + File.separator;
-		appJar = webappPath + getFileName(webappPath).get(0);
-		return appJar;
+		String tinyProjectPath = getTinyLogicProjectPath();
+		String webappPath = getWebAppPath();
+		tinyProjectPath = webappPath + FileUtils.getFileName(webappPath).get(0);
+		return tinyProjectPath;
 	}
 
-	protected static List<String> getFileName(String dir) {
-		File f = new File(dir);
-		List<String> lst = new ArrayList<String>();
-		if (!f.exists()) {
-			System.out.println(dir + " not exists");
-			return null;
-		}
-
-		File fa[] = f.listFiles();
-		for (int i = 0; i < fa.length; i++) {
-			File fs = fa[i];
-			if (!fs.isDirectory()) {
-				lst.add(fs.getName());
-			}
-
-		}
-		return lst;
+	/**
+	 * 得到webapp的目录路径
+	 * @param tinyProjectPath tinylogic的路径
+	 * @return String webapp的目录路径
+	 */
+	public static String getWebAppPath() {
+		return Context.getTinyLogicProjectPath() + "webapp" + File.separator;
+	}
+	
+	/**
+	 * 得到具体的app的lib的路径
+	 * @return
+	 */
+	public static String getAppLibPath(){
+		return Context.getWebAppPath()+"lib"+File.separator;
 	}
 
+	
+    /**
+     * 得到tinylogic项目的根目录
+     * @return tinylogic项目的根目录
+     */
 	public static String getTinyLogicProjectPath() {
-		final String jarPath = MyPath.getProjectPath();
+		final String jarPath = JarUtils.getJarPath();
 		String appJar = "";
 		// System.out.println(jarPath);
 		if (StringUtils.isNotEmpty(jarPath)) {

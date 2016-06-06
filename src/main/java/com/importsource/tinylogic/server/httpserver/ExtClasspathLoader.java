@@ -6,12 +6,17 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.importsource.log.core.Logger;
+import com.importsource.tinylogic.log.LogManager;
+import com.importsource.tinylogic.server.httpserver.utils.io.FileUtils;
+
 /**
  * 根据properties中配置的路径把jar和配置文件加载到classpath中。
- * @author hezf
+ * @author Hezf
  *
  */
 public final class ExtClasspathLoader {
+	protected static Logger logger = LogManager.getLogger(ExtClasspathLoader.class);
     /** URLClassLoader的addURL方法 */
     private static Method addURL = initAddMethod();
 
@@ -38,14 +43,15 @@ public final class ExtClasspathLoader {
     public static void loadClasspath() {
         List<String> files = getJarFiles();
         for (String f : files) {
+        	logger.i("load jar -"+f+" to classpath.");
             loadClasspath(f);
         }
 
-        /*List<String> resFiles = getResFiles();
+        List<String> resFiles = getResFiles();
 
         for (String r : resFiles) {
             loadResourceDir(r);
-        }*/
+        }
     }
 
     private static void loadClasspath(String filepath) {
@@ -111,9 +117,13 @@ public final class ExtClasspathLoader {
      */
     private static List<String> getJarFiles() {
         // TODO 从properties文件中读取配置信息略
-    	List<String> lst=new ArrayList<String>();
-    	lst.add("C:\\Users\\Hezf\\Documents\\dev\\svn\\alogic\\workspace\\tinylogic\\webapp\\lib\\test-classloader-0.0.1-SNAPSHOT.jar");
-        return lst;
+    	//读取指定的目录
+    	String appLibPath=Context.getAppLibPath();
+    	logger.i("app library path:"+appLibPath);
+    	List<String> libs=FileUtils.getJarFilePaths(appLibPath);
+    	logger.i("app libs size: "+libs.size());
+    	
+        return libs;
     }
 
     /**
@@ -122,7 +132,9 @@ public final class ExtClasspathLoader {
      */
     private static List<String> getResFiles() {
         //TODO 从properties文件中读取配置信息略
-        return null;
+    	List<String> lst=new ArrayList<String>();
+    	lst.add("C:\\Users\\Hezf\\Documents\\dev\\svn\\alogic\\workspace\\tinylogic\\webapp\\lib\\conf.xml");
+        return lst;
     }
 
     public static void main(String[] args) {

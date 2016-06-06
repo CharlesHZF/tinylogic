@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property>
+		<name>dbcp.driverClassName</name>
+		<value>org.mariadb.jdbc.Driver</value>
+	</property>
+	<property>
+		<name>dbcp.url</name>
+		<value>jdbc:mysql://localhost:3306/itportal</value>
+	</property>
+	<property>
+		<name>dbcp.username</name>
+		<value>root</value>
+	</property>
+	<property>
+		<name>dbcp.password</name>
+		<value>123456</value>
+	</property>
+	<property>
+		<name>dbcp.maxActive</name>
+		<value>30</value>
+	</property>
+	<property>
+		<name>dbcp.maxIdle</name>
+		<value>10</value>
+	</property>
+	<property>
+		<name>dbcp.minIdle</name>
+		<value>5</value>
+	</property>
+	<property>
+		<name>dbcp.maxWait</name>
+		<value>1000</value>
+	</property>
+	<property>
+		<name>dbcp.removeAbandoned</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>dbcp.removeAbandonedTimeout</name>
+		<value>180</value>
+	</property>
+</configuration>

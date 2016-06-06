@@ -13,7 +13,7 @@ import com.importsource.tinylogic.server.httpserver.core.impl.HttpHandler;
 import com.importsource.tinylogic.server.httpserver.utils.StringUtils;
 import com.importsource.tinylogic.server.httpserver.utils.XmlUtils;
 import com.importsource.tinylogic.server.httpserver.utils.jar.AppClassLoader;
-import com.importsource.tinylogic.server.httpserver.utils.jar.MyPath;
+import com.importsource.tinylogic.server.httpserver.utils.jar.JarUtils;
 
 /**
  * 上下文 

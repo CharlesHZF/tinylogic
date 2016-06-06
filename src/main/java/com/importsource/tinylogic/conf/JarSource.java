@@ -4,7 +4,7 @@ import java.io.File;
 
 import com.importsource.conf.Source;
 import com.importsource.tinylogic.server.httpserver.utils.StringUtils;
-import com.importsource.tinylogic.server.httpserver.utils.jar.MyPath;
+import com.importsource.tinylogic.server.httpserver.utils.jar.JarUtils;
 
 /**
  * 基于tinylogic的定制化实现.
@@ -29,7 +29,7 @@ public class JarSource{
 	}
 	
 	private static String getTinyLogicProjectPath() {
-		final	String  jarPath=MyPath.getProjectPath();
+		final	String  jarPath=JarUtils.getJarPath();
 		String appJar="";
 		//System.out.println(jarPath);
 		if(StringUtils.isNotEmpty(jarPath)){

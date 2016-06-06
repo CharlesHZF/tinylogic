@@ -5,10 +5,10 @@ package com.importsource.tinylogic.server.httpserver.utils.jar;
  * @author Hezf
  *
  */
-public class MyPath {
-	public static String getProjectPath() {
+public class JarUtils {
+	public static String getJarPath() {
 
-		java.net.URL url = MyPath.class.getProtectionDomain().getCodeSource().getLocation();
+		java.net.URL url = JarUtils.class.getProtectionDomain().getCodeSource().getLocation();
 		String filePath = null;
 		try {
 			filePath = java.net.URLDecoder.decode(url.getPath(), "utf-8");
@@ -23,7 +23,7 @@ public class MyPath {
 	}
 
 	public static String getRealPath() {
-		String realPath = MyPath.class.getClassLoader().getResource("").getFile();
+		String realPath = JarUtils.class.getClassLoader().getResource("").getFile();
 		java.io.File file = new java.io.File(realPath);
 		realPath = file.getAbsolutePath();
 		try {

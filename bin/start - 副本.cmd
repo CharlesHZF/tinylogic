@@ -1,0 +1,1 @@
+java  -jar ..\webapp\tinylogic-demo-0.0.1-SNAPSHOT.jar

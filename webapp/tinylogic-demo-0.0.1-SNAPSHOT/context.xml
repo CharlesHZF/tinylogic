@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<httpServer context="/myApp">
+	<handler>
+		<handler-class>com.tinylogicdemo.service.Hello1</handler-class>
+		<url-pattern>/hello1</url-pattern>
+	</handler>
+</httpServer>
