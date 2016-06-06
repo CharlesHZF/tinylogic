@@ -1,4 +1,4 @@
-### TinyLogic 配置
+## TinyLogic 配置
 
 
 TinyLogic根目录下有个conf.xml。
@@ -96,3 +96,58 @@ TinyLogic根目录下有个conf.xml。
 	
 </configuration>
 ```
+
+###配置文件规则说明
+
+配置文件必须是以上的格式。没有很复杂的层次结构。我们认为keyvalue就可以解决世界上所有的配置问题。你信不信，我反正信！
+
+另外也不要见什么都往配置文件放，配置解决不了解世界上所有的问题，解决了一部分就不错了！你信不信，我反正信！
+
+
+
+###配置数据库的参数
+```xml
+<property>
+		<name>dbcp.driverClassName</name>
+		<value>org.mariadb.jdbc.Driver</value>
+	</property>
+	<property>
+		<name>dbcp.url</name>
+		<value>jdbc:mysql://localhost:3306/itportal</value>
+	</property>
+	<property>
+		<name>dbcp.username</name>
+		<value>root</value>
+	</property>
+	<property>
+		<name>dbcp.password</name>
+		<value>123456</value>
+	</property>
+	<property>
+		<name>dbcp.maxActive</name>
+		<value>30</value>
+	</property>
+	<property>
+		<name>dbcp.maxIdle</name>
+		<value>10</value>
+	</property>
+	<property>
+		<name>dbcp.minIdle</name>
+		<value>5</value>
+	</property>
+	<property>
+		<name>dbcp.maxWait</name>
+		<value>1000</value>
+	</property>
+	<property>
+		<name>dbcp.removeAbandoned</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>dbcp.removeAbandonedTimeout</name>
+		<value>180</value>
+	</property>
+```
+
+
+
