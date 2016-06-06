@@ -70,7 +70,7 @@
 	<!-- log conf end -->
 	
 	
-	<!-- tinylogic conf start -->
+	<!-- tinylogic server conf start -->
 	<property>
 		<name>tinylogic.server.count</name>
 		<value>100</value>
@@ -84,6 +84,6 @@
 		<value>com.importsource.tinylogic.server.httpserver.AnnotationContext</value>
 	</property>
 	
-	<!-- tinylogic conf end -->
+	<!-- tinylogic server conf end -->
 	
 </configuration>
