@@ -1,5 +1,10 @@
 ### TinyLogic 配置
 
+
+TinyLogic根目录下有个conf.xml。
+
+以下是具体的配置内容：
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
