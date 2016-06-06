@@ -6,7 +6,7 @@ You can add some code to the doIt method,then all is ok.
 The object field  push content to client. eg. your browser. the format of data is json.
 
 
-###三秒学会使用TinyLogic
+###三步写一个TinyLogic服务。
 
 第一步：新建一个maven项目。然后写个这样的类：
 ```java
