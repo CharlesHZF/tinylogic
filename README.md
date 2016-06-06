@@ -14,7 +14,7 @@ The object field  push content to client. eg. your browser. the format of data i
 public class Hello2 extends DefaultHttpHandler{
 	@Override
 	public void doIt(Request request, Response response) {
-		obj =  "hello";
+		obj =  "hello world";
 	}
 	
 }
