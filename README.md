@@ -3,7 +3,7 @@ TinyLogic  is a flyweight microservice container.
 
 You can add some code to the doIt method,then all is ok.
 
-The object field  push content to client. eg. your browser. the format of data is json.
+The `obj` field  push content to client. eg. your browser. the format of data is json.
 
 
 ###三步写一个TinyLogic服务。
