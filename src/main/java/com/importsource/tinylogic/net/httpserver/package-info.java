@@ -1,27 +1,3 @@
-/*
- * Copyright (c) 2005, Oracle and/or its affiliates. All rights reserved.
- * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
 
 /**
    Provides a simple high-level Http server API, which can be used to build
