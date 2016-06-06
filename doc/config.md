@@ -151,3 +151,33 @@ TinyLogic根目录下有个conf.xml。
 
 
 
+###配置log的参数
+```xml
+<!-- log conf start -->
+	 <!--日志输出实现提供者-->
+	<property>
+		<name>clog.logger</name>
+		<value>ConsoleLogger</value>
+	</property>
+	<!--日志级别 i w e-->
+	<property>
+		<name>clog.level</name>
+		<value>info</value>
+	</property>
+	<!-- 文件的目录 -->
+	<property>
+		<name>clog.dir</name>
+		<value>/log/</value>
+	</property>
+	<!-- 文件的前缀 -->
+	<property>
+		<name>clog.file.pre</name>
+		<value>test</value>
+	</property>
+	
+	
+	<!-- log conf end -->
+```
+
+
+
