@@ -1,5 +1,5 @@
-# tinylogic
-tinylogic  is a flyweight microservice framework.
+# TinyLogic
+TinyLogic  is a flyweight microservice container.
 
 You can add some code to the doIt method,then all is ok.
 
