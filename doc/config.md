@@ -201,3 +201,24 @@ TinyLogic根目录下有个conf.xml。
 
 
 
+
+
+###TinyLogic Conf  配置能力
+
+你可以通过以下的代码在你的service逻辑中读取 conf.xml的你的配置：
+```java
+
+@MicroService(value="/apps/hello2")
+public class Hello2 extends DefaultHttpHandler{
+	@Override
+	public void doIt(Request request, Response response) {
+		Person p=new Person();
+		p.name="HelloWorld22222";
+		DefaultProperties p1 =DefaultProperties.newInstance();
+		String driverClassName = PropertiesTools.get(p1, "dbcp.driverClassName", null);
+		obj =  driverClassName;
+	}
+	
+}
+
+```

@@ -1,12 +1,12 @@
-# tinylogic
-tinylogic  is a flyweight microservice framework.
+# TinyLogic
+TinyLogic  is a flyweight microservice container.
 
 You can add some code to the doIt method,then all is ok.
 
-The object field  push content to client. eg. your browser. the format of data is json.
+The `obj` field  push content to client. eg. your browser. the format of data is json.
 
 
-###三秒学会使用TinyLogic
+###三步写一个TinyLogic服务。
 
 第一步：新建一个maven项目。然后写个这样的类：
 ```java
@@ -14,7 +14,7 @@ The object field  push content to client. eg. your browser. the format of data i
 public class Hello2 extends DefaultHttpHandler{
 	@Override
 	public void doIt(Request request, Response response) {
-		obj =  "hello";
+		obj =  "hello world";
 	}
 	
 }
@@ -29,25 +29,8 @@ public class Hello2 extends DefaultHttpHandler{
 
 ![](doc/image/tlogic-welcomepage-d.png)
 
+![](doc/image/tlogic-demo-d.png)
 
 
 
-###TinyLogic Conf  配置能力
 
-你可以通过以下的代码在你的service逻辑中读取 conf.xml的你的配置：
-```java
-
-@MicroService(value="/apps/hello2")
-public class Hello2 extends DefaultHttpHandler{
-	@Override
-	public void doIt(Request request, Response response) {
-		Person p=new Person();
-		p.name="HelloWorld22222";
-		DefaultProperties p1 =DefaultProperties.newInstance();
-		String driverClassName = PropertiesTools.get(p1, "dbcp.driverClassName", null);
-		obj =  driverClassName;
-	}
-	
-}
-
-```
