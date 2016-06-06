@@ -180,4 +180,24 @@ TinyLogic根目录下有个conf.xml。
 ```
 
 
+###配置server的参数
+```xml
+<!-- tinylogic conf start -->
+	<property>
+		<name>tinylogic.server.count</name>
+		<value>100</value>
+	</property>
+	<property>
+		<name>tinylogic.server.port</name>
+		<value>9000</value>
+	</property>
+	<property>
+		<name>tinylogic.server.context</name>
+		<value>com.importsource.tinylogic.server.httpserver.AnnotationContext</value>
+	</property>
+	
+<!-- tinylogic conf end -->
+```
+
+
 
