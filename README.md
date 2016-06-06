@@ -27,6 +27,7 @@ public class Hello2 extends DefaultHttpHandler{
 
 
 
+![](doc/image/tlogic-welcomepage-d.png)
 
 
 
